@@ -3,128 +3,143 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vyron IDE - Roblox Executor</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <title>Vyron IDE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --main: #8a2be2;
-      --accent: #6a1b9a;
-      --bg: #0d0d15;
+      --bg: #0e001d;
+      --primary: #8a2be2;
+      --accent: #6d00cc;
       --text: #ffffff;
-      --text-faint: #bbbbbb;
+      --text-light: #c9c9c9;
     }
 
     body {
       margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #0e001d, #1a0033);
       font-family: 'Inter', sans-serif;
-      background: var(--bg);
       color: var(--text);
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      overflow-x: hidden;
     }
 
     header {
-      padding: 4rem 2rem;
       text-align: center;
-      background: linear-gradient(135deg, var(--main), var(--accent));
-      color: #fff;
+      padding: 6rem 2rem;
+      background: radial-gradient(circle at center, #8a2be2 0%, #1a0033 100%);
+      animation: pulseGlow 8s infinite;
     }
 
-    header h1 {
-      font-size: 3rem;
+    @keyframes pulseGlow {
+      0%, 100% {
+        background: radial-gradient(circle at center, #8a2be2 0%, #1a0033 100%);
+      }
+      50% {
+        background: radial-gradient(circle at center, #6d00cc 0%, #0e001d 100%);
+      }
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3.5rem;
       margin: 0;
+      color: white;
+      text-shadow: 0 0 20px rgba(138, 43, 226, 0.7);
+      animation: fadeInDown 1.2s ease-out;
     }
 
-    header p {
-      font-size: 1.2rem;
-      margin: 1rem 0 2rem;
-    }
-
-    .btn {
-      background: #fff;
-      color: var(--accent);
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      font-weight: bold;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .btn:hover {
-      background: #ddd;
-    }
-
-    main {
-      padding: 3rem 2rem;
-      max-width: 1000px;
-      margin: auto;
+    @keyframes fadeInDown {
+      0% { opacity: 0; transform: translateY(-40px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 2rem;
-      margin-top: 2rem;
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    .feature {
-      background: #1a1a2f;
-      border-radius: 10px;
-      padding: 1.5rem;
-      transition: transform 0.2s;
+    .feature-box {
+      background: #1d002f;
+      border: 1px solid #3d0072;
+      padding: 2rem;
+      border-radius: 12px;
+      flex: 1 1 300px;
+      max-width: 360px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: fadeInUp 1s ease forwards;
     }
 
-    .feature:hover {
-      transform: scale(1.03);
+    .feature-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(138, 43, 226, 0.5);
     }
 
-    .feature h3 {
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .feature-box h3 {
+      color: var(--primary);
       margin-top: 0;
-      color: var(--main);
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .feature-box p {
+      color: var(--text-light);
+      font-size: 0.95rem;
     }
 
     footer {
       text-align: center;
       padding: 2rem;
-      color: var(--text-faint);
-      background: #0a0a12;
-      margin-top: auto;
+      font-size: 0.9rem;
+      color: #aaa;
+      background: #0a001a;
+      border-top: 1px solid #1f0033;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Vyron IDE</h1>
-    <p>Roblox Execution. Reimagined.</p>
-    <a class="btn" href="https://your-download-link.com" target="_blank">Download Now</a>
+    <h1>Get Vyron</h1>
   </header>
 
-  <main>
-    <h2 style="text-align:center;">Why Vyron?</h2>
-    <div class="features">
-      <div class="feature">
-        <h3>⚡ Ultra-Fast Injection</h3>
-        <p>Powered by a lightweight Quorum core, Vyron launches scripts instantly without delay or lag.</p>
-      </div>
-      <div class="feature">
-        <h3>🧠 Script Hub Integration</h3>
-        <p>Get access to a powerful and clean script hub built right into the IDE interface.</p>
-      </div>
-      <div class="feature">
-        <h3>🎨 Beautiful UI</h3>
-        <p>Dark, customizable, and built with Guna2 — Vyron is both sleek and functional.</p>
-      </div>
-      <div class="feature">
-        <h3>🔒 Safe & Secure</h3>
-        <p>Vyron IDE uses encrypted APIs and inject methods to keep your scripts and sessions private.</p>
-      </div>
+  <section class="features">
+    <div class="feature-box">
+      <h3>⚡ Fast Injection</h3>
+      <p>Vyron injects in milliseconds using a custom Quorum interface for optimal speed and safety.</p>
     </div>
-  </main>
+    <div class="feature-box">
+      <h3>🔒 99% UNC Bypass</h3>
+      <p>One of the highest script compatibility rates in Roblox executor history. UNC detection? Not here.</p>
+    </div>
+    <div class="feature-box">
+      <h3>🧠 Smart Script Hub</h3>
+      <p>Built-in script hub with smart caching and theme-matching previews. Add, run, and save your favs.</p>
+    </div>
+    <div class="feature-box">
+      <h3>🎨 Fully Skinnable UI</h3>
+      <p>Custom themes, Guna2 UI, dark mode defaults, and full WinForms color sync included.</p>
+    </div>
+    <div class="feature-box">
+      <h3>🚀 Auto Inject</h3>
+      <p>Enable Auto Inject in settings and Vyron will launch and inject with zero manual setup.</p>
+    </div>
+    <div class="feature-box">
+      <h3>🛡️ Secure Execution</h3>
+      <p>Encrypted calls, obfuscation, and isolated memory space to keep your scripts safe.</p>
+    </div>
+  </section>
 
   <footer>
-    &copy; 2025 Vyron IDE. All rights reserved.
+    &copy; 2025 Vyron IDE — Designed for performance.
   </footer>
 
 </body>
