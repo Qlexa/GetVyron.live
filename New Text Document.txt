@@ -2,145 +2,115 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vyron IDE</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vyron IDE - Roblox Executor</title>
   <style>
-    :root {
-      --bg: #0e001d;
-      --primary: #8a2be2;
-      --accent: #6d00cc;
-      --text: #ffffff;
-      --text-light: #c9c9c9;
-    }
-
     body {
       margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #0e001d, #1a0033);
-      font-family: 'Inter', sans-serif;
-      color: var(--text);
-      overflow-x: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f0f1a;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     header {
+      background: linear-gradient(90deg, #8a2be2, #6a1b9a);
+      padding: 2rem;
       text-align: center;
-      padding: 6rem 2rem;
-      background: radial-gradient(circle at center, #8a2be2 0%, #1a0033 100%);
-      animation: pulseGlow 8s infinite;
     }
 
-    @keyframes pulseGlow {
-      0%, 100% {
-        background: radial-gradient(circle at center, #8a2be2 0%, #1a0033 100%);
-      }
-      50% {
-        background: radial-gradient(circle at center, #6d00cc 0%, #0e001d 100%);
-      }
-    }
-
-    h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 3.5rem;
+    header h1 {
       margin: 0;
-      color: white;
-      text-shadow: 0 0 20px rgba(138, 43, 226, 0.7);
-      animation: fadeInDown 1.2s ease-out;
+      font-size: 3rem;
     }
 
-    @keyframes fadeInDown {
-      0% { opacity: 0; transform: translateY(-40px); }
-      100% { opacity: 1; transform: translateY(0); }
+    header p {
+      font-style: italic;
+      margin: 0.5rem 0 1rem;
+    }
+
+    .btn {
+      background: #6a1b9a;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #5a1080;
+    }
+
+    main {
+      flex: 1;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
     }
 
     .features {
       display: flex;
+      gap: 1rem;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 2rem;
-      padding: 4rem 2rem;
-      max-width: 1200px;
-      margin: auto;
     }
 
     .feature-box {
-      background: #1d002f;
-      border: 1px solid #3d0072;
-      padding: 2rem;
-      border-radius: 12px;
-      flex: 1 1 300px;
-      max-width: 360px;
-      transition: transform 0.3s, box-shadow 0.3s;
-      animation: fadeInUp 1s ease forwards;
-    }
-
-    .feature-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 25px rgba(138, 43, 226, 0.5);
-    }
-
-    @keyframes fadeInUp {
-      0% { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
-
-    .feature-box h3 {
-      color: var(--primary);
-      margin-top: 0;
-      font-family: 'Orbitron', sans-serif;
-    }
-
-    .feature-box p {
-      color: var(--text-light);
-      font-size: 0.95rem;
+      background: #1c1c2b;
+      padding: 1rem;
+      border-radius: 8px;
+      flex: 1 1 250px;
+      text-align: center;
     }
 
     footer {
       text-align: center;
-      padding: 2rem;
+      padding: 1rem;
       font-size: 0.9rem;
       color: #aaa;
-      background: #0a001a;
-      border-top: 1px solid #1f0033;
+      background: #0a0a15;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Get Vyron</h1>
+    <h1>Vyron IDE</h1>
+    <p>Execute the Future with Vyron</p>
+    <button class="btn" onclick="window.location.href='https://your-download-link.com'">Download Now</button>
   </header>
 
-  <section class="features">
-    <div class="feature-box">
-      <h3>⚡ Fast Injection</h3>
-      <p>Vyron injects in milliseconds using a custom Quorum interface for optimal speed and safety.</p>
+  <main>
+    <h2 style="text-align:center;">Features</h2>
+    <div class="features">
+      <div class="feature-box">
+        <h3>⚡ Fast Injection</h3>
+        <p>Quick and reliable injection into Roblox.</p>
+      </div>
+      <div class="feature-box">
+        <h3>📜 Script Hub</h3>
+        <p>Built-in access to your favorite scripts.</p>
+      </div>
+      <div class="feature-box">
+        <h3>🎨 Theme Support</h3>
+        <p>Customize the look to match your vibe.</p>
+      </div>
     </div>
-    <div class="feature-box">
-      <h3>🔒 99% UNC Bypass</h3>
-      <p>One of the highest script compatibility rates in Roblox executor history. UNC detection? Not here.</p>
-    </div>
-    <div class="feature-box">
-      <h3>🧠 Smart Script Hub</h3>
-      <p>Built-in script hub with smart caching and theme-matching previews. Add, run, and save your favs.</p>
-    </div>
-    <div class="feature-box">
-      <h3>🎨 Fully Skinnable UI</h3>
-      <p>Custom themes, Guna2 UI, dark mode defaults, and full WinForms color sync included.</p>
-    </div>
-    <div class="feature-box">
-      <h3>🚀 Auto Inject</h3>
-      <p>Enable Auto Inject in settings and Vyron will launch and inject with zero manual setup.</p>
-    </div>
-    <div class="feature-box">
-      <h3>🛡️ Secure Execution</h3>
-      <p>Encrypted calls, obfuscation, and isolated memory space to keep your scripts safe.</p>
-    </div>
-  </section>
+
+    <section style="margin-top: 2rem;">
+      <h2 style="text-align:center;">About Vyron IDE</h2>
+      <p style="text-align:center;">
+        Vyron IDE is a modern Roblox executor designed for speed, style, and script freedom. Whether you're a beginner or pro scripter, Vyron delivers a smooth, polished experience.
+      </p>
+    </section>
+  </main>
 
   <footer>
-    &copy; 2025 Vyron IDE — Designed for performance.
+    &copy; 2025 Vyron IDE. All rights reserved.
   </footer>
-
 </body>
 </html>
